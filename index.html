@@ -4,32 +4,53 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{siba:'#1C0A63',cyan:'#18B9E8',lime:'#C9FF1A'}}}}</script>
 <style>
-body{background:#0f082f;color:white}.glass{background:rgba(255,255,255,.06);backdrop-filter:blur(12px)}
-.flip{perspective:1000px}.flip-inner{transition:transform .7s;transform-style:preserve-3d}.flip:hover .flip-inner{transform:rotateY(180deg)}
-.face{backface-visibility:hidden}.back{transform:rotateY(180deg)}
+body{
+    background:#0f082f;
+    color:white;
+    overflow-x:hidden;
+}
 
-
-html{
-    scroll-behavior:smooth;
+/* Premium glass card */
+.glass{
+    background:linear-gradient(
+        145deg,
+        rgba(28,10,99,.96),
+        rgba(16,8,50,.96)
+    );
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        inset 0 1px rgba(255,255,255,.08);
 }
 
 .stack-container{
     max-width:1100px;
     margin:auto;
     position:relative;
+    padding-inline:1rem;
 }
 
 .stack-card{
     position:sticky;
-    top:90px;
-    min-height:80vh;
+    top:85px;
+    min-height:82vh;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
+
+    border-radius:32px;
     transform-origin:center top;
+
     transition:
-        transform .4s ease,
-        opacity .4s ease;
+        transform .45s cubic-bezier(.22,1,.36,1),
+        opacity .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+
+    will-change:transform;
 }
 </style>
 
@@ -126,34 +147,56 @@ html{
 
 
 
+
 <script>
-const cards = document.querySelectorAll(".stack-card");
+const cards = [...document.querySelectorAll(".stack-card")];
 
 function animateCards(){
 
     cards.forEach((card,index)=>{
 
         const rect = card.getBoundingClientRect();
-        const trigger = window.innerHeight * 0.22;
 
-        let progress = (trigger - rect.top)/trigger;
+        const progress = Math.min(
+            Math.max((120-rect.top)/120,0),
+            1
+        );
 
-        progress = Math.max(0,Math.min(progress,1));
-
-        const scale = 1 - progress*0.08;
-        const opacity = 1 - progress*0.25;
-        const translate = progress*18;
+        const scale = 1-progress*0.06;
+        const translate = progress*24;
 
         card.style.transform =
             `translateY(${translate}px) scale(${scale})`;
 
-        card.style.opacity = opacity;
-        card.style.zIndex = cards.length-index;
+        card.style.zIndex = 100-index;
+
+        if(progress>0.98){
+
+            card.style.opacity="1";
+
+            card.style.filter="brightness(1)";
+
+            card.style.boxShadow=
+                "0 45px 120px rgba(0,0,0,.55),0 0 40px rgba(24,185,232,.18)";
+
+        }else{
+
+            card.style.opacity="0.94";
+
+            card.style.filter="brightness(.86)";
+
+            card.style.boxShadow=
+                "0 20px 50px rgba(0,0,0,.35)";
+
+        }
+
     });
 
 }
 
 window.addEventListener("scroll",animateCards);
+window.addEventListener("resize",animateCards);
 window.addEventListener("load",animateCards);
 </script>
+
 </body></html>
