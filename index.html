@@ -1,184 +1,684 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIBA - Students in Blockchain Africa</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIBA • Students in Blockchain Africa</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{siba:'#1C0A63',cyan:'#18B9E8',lime:'#C9FF1A'}}}}</script>
-<style>
-body{
-    background:#0f082f;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* Premium glass card */
-.glass{
-    background:linear-gradient(
-        145deg,
-        rgba(28,10,99,.96),
-        rgba(16,8,50,.96)
-    );
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(24px);
-    -webkit-backdrop-filter:blur(24px);
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.45),
-        inset 0 1px rgba(255,255,255,.08);
-}
-.stack-container{
-    max-width:1100px;
-    margin:auto;
-    position:relative;
-    padding:120px 16px;
-}
-
-/* Each card sticks */
-.stack-card{
-    position:sticky;
-    top:90px;
-    height:80vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    border-radius:32px;
-    transform-origin:center top;
-    transition:transform .45s cubic-bezier(.22,1,.36,1),
-               box-shadow .35s ease,
-               filter .35s ease;
-}
-
-/* This makes every new card overlap the previous one */
-.stack-card:not(:first-child){
-    margin-top:-62vh;
-}</style>
-
-
-</head>
-<body class="font-sans">
-<nav class="fixed top-0 w-full glass z-50"><div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
-<div class="flex items-center gap-3"><img src="assets/logo.jpg" class="w-12 h-12 rounded-full"><span class="font-bold">SIBA</span></div>
-<div class="hidden md:flex gap-6 text-sm"><a href="#about">About</a><a href="#team">Team</a><a href="#events">Events</a><a href="#join">Join</a></div></div></nav>
-
-<section class="min-h-screen flex items-center bg-gradient-to-br from-siba via-[#12053d] to-black pt-24">
-<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 p-8 items-center">
-<div><h1 class="text-5xl md:text-7xl font-black">Students in <span class="text-cyan">Blockchain</span> Africa</h1>
-<p class="text-xl text-gray-300 mt-4">Empowering African students to build the next generation of Web3 innovation.</p>
-<div class="mt-8 flex gap-4"><a href="#join" class="bg-lime text-black px-6 py-3 rounded-full font-bold">Join SIBA</a><a href="#about" class="border border-cyan px-6 py-3 rounded-full">Learn More</a></div></div>
-<div class="relative"><div class="absolute inset-0 blur-3xl bg-cyan/30 rounded-full"></div><img src="assets/logo.jpg" class="relative rounded-3xl shadow-2xl"></div></div></section>
-<section class="stack-container py-20">
-    <!-- About -->
-    <div class="stack-card glass rounded-[32px] p-10 mb-16">
-        <h2 class="text-4xl font-bold text-cyan mb-6">Welcome to SIBA</h2>
-        <p class="text-gray-300 leading-8">
-            Students in Blockchain Africa (SIBA) is a pan-African community dedicated to...
-        </p>
-    </div>
-
-    <!-- Vision -->
-    <div class="stack-card glass rounded-[32px] p-10 mb-16">
-        <h2 class="text-4xl font-bold text-lime mb-6">Vision</h2>
-        <p class="text-gray-300">
-            Every African student should have access to blockchain education...
-        </p>
-    </div>
-
-    <!-- Mission -->
-    <div class="stack-card glass rounded-[32px] p-10">
-        <h2 class="text-4xl font-bold text-cyan mb-6">Mission</h2>
-        <p class="text-gray-300">
-            Build a supportive pan-African student community...
-        </p>
-    </div>
-
-    <!-- Community -->
-    <div class="stack-card glass rounded-[32px] p-10">
-        <h2 class="text-4xl font-bold text-white mb-6">Community</h2>
-        <p class="text-gray-300">
-            Workshops, hackathons, mentorship and networking...
-        </p>
-    </div>
-</section>
-<section id="team" class="bg-[#14063d] py-20"><div class="max-w-7xl mx-auto p-8">
-<h2 class="text-4xl font-bold text-lime mb-10">Meet the Team</h2>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-cyan rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Founder / Lead</h3><p>[Your Name]</p><p class="text-sm text-gray-400">[Country]</p></div>
-<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-lime rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Partnerships Lead</h3><p>TBD</p></div>
-<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-cyan rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Chapter Coordinator</h3><p>TBD</p></div>
-<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-lime rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Content Lead</h3><p>TBD</p></div>
-</div></div></section>
-
-<section id="events" class="max-w-7xl mx-auto p-8 py-20"><h2 class="text-4xl font-bold text-cyan mb-10">Meetings & Events</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-lime">Weekly Calls</h3><p class="text-gray-300 mt-3">Blockchain fundamentals, project updates, Q&A, chapter check-ins, and leadership syncs.</p></div>
-<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-cyan">Hackathons & Workshops</h3><p class="text-gray-300 mt-3">Smart contracts, Web3 101, speaker series, and inter-university meetups.</p></div>
-</div></section>
-
-<section class="bg-[#14063d] py-20"><div class="max-w-7xl mx-auto p-8">
-<h2 class="text-4xl font-bold text-lime mb-8">Partnerships</h2>
-<div class="grid md:grid-cols-3 gap-4">
-<div class="glass p-5 rounded-2xl">Africa's Blockchain Club</div>
-<div class="glass p-5 rounded-2xl">Sui Africa / SuiHub Lagos</div>
-<div class="glass p-5 rounded-2xl">Lisk Africa</div>
-<div class="glass p-5 rounded-2xl">Web3Unilag</div>
-<div class="glass p-5 rounded-2xl">Teen Girls in Blockchain</div>
-</div>
-<p class="mt-8 text-gray-300">SIBA offers partners access to a growing student network, co-hosted workshops, and distribution for grants, scholarships, and internships.</p></div></section>
-
-<section class="max-w-7xl mx-auto p-8 py-20"><h2 class="text-4xl font-bold text-cyan mb-10">Projects & Articles</h2>
-<div class="grid md:grid-cols-2 gap-6">
-<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-lime">Projects</h3><p class="text-gray-300 mt-3">Future home for student-built hackathon projects solving African challenges.</p></div>
-<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-cyan">Introduction to Web3</h3><p class="text-gray-300 mt-3">A beginner-friendly on-ramp covering wallets, smart contracts, and blockchain fundamentals.</p></div>
-</div></section>
-
-<section id="join" class="bg-gradient-to-r from-siba to-[#2b0d7a] py-20"><div class="max-w-5xl mx-auto p-8 text-center">
-<h2 class="text-5xl font-black">Join the Movement</h2>
-<p class="mt-6 text-xl text-gray-200">Become part of Africa’s next generation of blockchain builders.</p>
-<div class="grid md:grid-cols-2 gap-6 mt-10">
-<div class="glass rounded-2xl p-5"><p>🌐 Website</p><p class="text-gray-400">Coming Soon</p></div>
-<div class="glass rounded-2xl p-5"><p>✉ Email</p><p class="text-gray-400">info@siba.africa</p></div>
-<div class="glass rounded-2xl p-5"><p>𝕏 Twitter/X</p><p class="text-gray-400">Coming Soon</p></div>
-<div class="glass rounded-2xl p-5"><p>Telegram / WhatsApp</p><p class="text-gray-400">Coming Soon</p></div>
-</div></div></section>
-
-<footer class="text-center p-8 text-gray-400">© 2026 Students in Blockchain Africa (SIBA).</footer>
-
-
-
 
 <script>
-const cards = [...document.querySelectorAll(".stack-card")];
+tailwind.config={
+theme:{
+extend:{
+colors:{
+siba:"#1C0A63",
+cyan:"#18B9E8",
+lime:"#C9FF1A"
+}
+}
+}
+}
+</script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f082f;
+color:white;
+overflow-x:hidden;
+font-family:Inter,system-ui,sans-serif;
+}
+
+/* ---------------- NAV ---------------- */
+
+.glass{
+background:linear-gradient(
+145deg,
+rgba(28,10,99,.96),
+rgba(16,8,50,.96)
+);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(24px);
+-webkit-backdrop-filter:blur(24px);
+box-shadow:
+0 25px 60px rgba(0,0,0,.35),
+inset 0 1px rgba(255,255,255,.08);
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero-glow{
+position:absolute;
+width:400px;
+height:400px;
+background:#18B9E8;
+filter:blur(150px);
+opacity:.22;
+border-radius:50%;
+}
+
+/* ---------------- APPLE STACK ---------------- */
+
+.stack-container{
+max-width:1100px;
+margin:auto;
+padding:140px 16px 220px;
+position:relative;
+}
+
+.stack-wrap{
+height:120vh;
+position:relative;
+}
+
+.stack-card{
+position:sticky;
+top:95px;
+height:82vh;
+border-radius:34px;
+padding:3rem;
+display:flex;
+flex-direction:column;
+justify-content:center;
+transform-origin:center top;
+transition:
+transform .55s cubic-bezier(.22,1,.36,1),
+filter .35s ease,
+box-shadow .35s ease;
+will-change:transform;
+}
+
+/* --------------- TEAM CARDS --------------- */
+
+.flip{
+perspective:1000px;
+}
+
+.flip-inner{
+position:relative;
+height:320px;
+transform-style:preserve-3d;
+transition:transform .7s;
+}
+
+.flip:hover .flip-inner{
+transform:rotateY(180deg);
+}
+
+.face{
+position:absolute;
+inset:0;
+backface-visibility:hidden;
+border-radius:24px;
+}
+
+.back{
+transform:rotateY(180deg);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav class="fixed top-0 left-0 w-full z-50 glass">
+
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<div class="flex items-center gap-3">
+<img src="assets/logo.jpg" class="w-12 h-12 rounded-full">
+<div>
+<h1 class="font-bold">SIBA</h1>
+<p class="text-xs text-gray-400">Students in Blockchain Africa</p>
+</div>
+</div>
+
+<div class="hidden md:flex gap-8 text-sm">
+<a href="#about" class="hover:text-cyan transition">About</a>
+<a href="#team" class="hover:text-cyan transition">Team</a>
+<a href="#events" class="hover:text-cyan transition">Events</a>
+<a href="#join" class="hover:text-cyan transition">Join</a>
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="relative min-h-screen flex items-center bg-gradient-to-br from-siba via-[#12053d] to-black overflow-hidden">
+
+<div class="hero-glow -left-20 top-20"></div>
+
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center relative z-10">
+
+<div>
+
+<h1 class="text-5xl md:text-7xl font-black leading-tight">
+
+Students in
+
+<span class="text-cyan">Blockchain</span>
+
+Africa
+
+</h1>
+
+<p class="text-xl text-gray-300 mt-8 leading-relaxed">
+
+Empowering African students to build the next generation of Web3 innovation through education, mentorship and community.
+
+</p>
+
+<div class="flex gap-4 mt-10 flex-wrap">
+
+<a href="#join" class="bg-lime text-black font-bold px-7 py-3 rounded-full hover:scale-105 transition">
+
+Join SIBA
+
+</a>
+
+<a href="#about" class="border border-cyan px-7 py-3 rounded-full hover:bg-cyan hover:text-black transition">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="relative">
+
+<div class="absolute inset-0 bg-cyan/20 blur-3xl rounded-full"></div>
+
+<img src="assets/logo.jpg" class="relative rounded-3xl shadow-2xl">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STACKING CARDS -->
+
+<section id="about" class="stack-container">
+
+<!-- CARD 1 -->
+
+<div class="stack-wrap">
+
+<div class="stack-card glass">
+
+<h2 class="text-4xl font-bold text-cyan mb-6">
+
+Welcome to SIBA
+
+</h2>
+
+<p class="text-lg text-gray-300 leading-8">
+
+Students in Blockchain Africa (SIBA) is a pan-African community dedicated to fostering blockchain education, innovation and adoption among students at every academic level.
+
+We close the gap between Africa's rapidly growing Web3 ecosystem and students seeking structured learning, mentorship and real opportunities.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="stack-wrap">
+
+<div class="stack-card glass">
+
+<h2 class="text-4xl font-bold text-lime mb-6">
+
+Vision
+
+</h2>
+
+<p class="text-lg text-gray-300 leading-8">
+
+A future where every African student, regardless of academic background or location, has access to blockchain education and opportunities to build within Web3—driving innovation, inclusion and economic growth across the continent.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="stack-wrap">
+
+<div class="stack-card glass">
+
+<h2 class="text-4xl font-bold text-cyan mb-6">
+
+Mission
+
+</h2>
+
+<p class="text-lg text-gray-300 leading-8">
+
+Create a supportive pan-African student community that provides structured blockchain education, hands-on project experience, mentorship and pathways into the Web3 industry.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- CARD 4 -->
+
+<div class="stack-wrap">
+
+<div class="stack-card glass">
+
+<h2 class="text-4xl font-bold mb-6">
+
+Community
+
+</h2>
+
+<p class="text-lg text-gray-300 leading-8">
+
+Whether you're a complete beginner or already building on-chain, there's a place for you in SIBA through workshops, hackathons, networking events and campus chapters across Africa.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TEAM -->
+
+<section id="team" class="py-24 bg-[#14063d]">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<h2 class="text-5xl font-bold text-lime text-center mb-14">
+
+Meet the Team
+
+</h2>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+<div class="flip">
+
+<div class="flip-inner">
+
+<div class="face glass flex flex-col items-center justify-center text-center p-6">
+
+<div class="w-24 h-24 bg-cyan rounded-full"></div>
+
+<h3 class="mt-5 font-bold">Founder / Lead</h3>
+
+<p>[Your Name]</p>
+
+</div>
+
+<div class="face back bg-cyan text-black flex items-center justify-center text-center p-6 font-semibold">
+
+Leading SIBA's vision across Africa.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flip">
+
+<div class="flip-inner">
+
+<div class="face glass flex flex-col items-center justify-center">
+
+<div class="w-24 h-24 bg-lime rounded-full"></div>
+
+<h3 class="mt-5 font-bold">Partnerships Lead</h3>
+
+<p>TBD</p>
+
+</div>
+
+<div class="face back bg-lime text-black flex items-center justify-center text-center p-6">
+
+Building relationships with Web3 ecosystems.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flip">
+
+<div class="flip-inner">
+
+<div class="face glass flex flex-col items-center justify-center">
+
+<div class="w-24 h-24 bg-cyan rounded-full"></div>
+
+<h3 class="mt-5 font-bold">Chapter Coordinator</h3>
+
+<p>TBD</p>
+
+</div>
+
+<div class="face back bg-cyan text-black flex items-center justify-center text-center p-6">
+
+Growing campus communities.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flip">
+
+<div class="flip-inner">
+
+<div class="face glass flex flex-col items-center justify-center">
+
+<div class="w-24 h-24 bg-lime rounded-full"></div>
+
+<h3 class="mt-5 font-bold">Content Lead</h3>
+
+<p>TBD</p>
+
+</div>
+
+<div class="face back bg-lime text-black flex items-center justify-center text-center p-6">
+
+Driving education initiatives.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EVENTS -->
+
+<section id="events" class="py-24">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<h2 class="text-5xl font-bold text-cyan text-center mb-14">
+
+Meetings & Events
+
+</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="glass rounded-3xl p-8">
+
+<h3 class="text-2xl text-lime font-bold mb-4">
+
+Weekly Calls
+
+</h3>
+
+<p class="text-gray-300 leading-7">
+
+Blockchain fundamentals, project updates, Q&A sessions, chapter check-ins and leadership syncs.
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8">
+
+<h3 class="text-2xl text-cyan font-bold mb-4">
+
+Hackathons & Workshops
+
+</h3>
+
+<p class="text-gray-300 leading-7">
+
+Web3 101, smart contracts, speaker series, AMAs and inter-university meetups across Africa.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PARTNERS -->
+
+<section class="py-24 bg-[#14063d]">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<h2 class="text-5xl text-lime font-bold text-center mb-14">
+
+Partnerships
+
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="glass rounded-2xl p-6">Africa's Blockchain Club</div>
+
+<div class="glass rounded-2xl p-6">Sui Africa</div>
+
+<div class="glass rounded-2xl p-6">Lisk Africa</div>
+
+<div class="glass rounded-2xl p-6">Web3Unilag</div>
+
+<div class="glass rounded-2xl p-6">Teen Girls in Blockchain</div>
+
+<div class="glass rounded-2xl p-6">Future Ecosystem Partners</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="py-24">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<h2 class="text-5xl text-cyan font-bold text-center mb-14">
+
+Projects & Articles
+
+</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="glass rounded-3xl p-8">
+
+<h3 class="text-2xl text-lime font-bold mb-4">
+
+Projects
+
+</h3>
+
+<p class="text-gray-300">
+
+Future home for student-built hackathon projects solving real African challenges.
+
+</p>
+
+</div>
+
+<div class="glass rounded-3xl p-8">
+
+<h3 class="text-2xl text-cyan font-bold mb-4">
+
+Introduction to Web3
+
+</h3>
+
+<p class="text-gray-300">
+
+A beginner-friendly guide covering wallets, smart contracts and blockchain fundamentals.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- JOIN -->
+
+<section id="join" class="py-24 bg-gradient-to-r from-siba to-[#2b0d7a]">
+
+<div class="max-w-5xl mx-auto px-8 text-center">
+
+<h2 class="text-5xl font-black">
+
+Join the Movement
+
+</h2>
+
+<p class="text-xl text-gray-300 mt-6">
+
+Become part of Africa's next generation of blockchain builders.
+
+</p>
+
+<div class="grid md:grid-cols-2 gap-6 mt-12">
+
+<div class="glass rounded-2xl p-6">
+
+🌐 Website
+
+<p class="text-gray-400 mt-2">Coming Soon</p>
+
+</div>
+
+<div class="glass rounded-2xl p-6">
+
+✉ Email
+
+<p class="text-gray-400 mt-2">info@siba.africa</p>
+
+</div>
+
+<div class="glass rounded-2xl p-6">
+
+𝕏 Twitter/X
+
+<p class="text-gray-400 mt-2">Coming Soon</p>
+
+</div>
+
+<div class="glass rounded-2xl p-6">
+
+Telegram / WhatsApp
+
+<p class="text-gray-400 mt-2">Coming Soon</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="py-8 text-center text-gray-400">
+
+© 2026 Students in Blockchain Africa (SIBA)
+
+</footer>
+
+<!-- STACK ANIMATION -->
+
+<script>
+
+const wrappers=[...document.querySelectorAll(".stack-wrap")];
+const cards=[...document.querySelectorAll(".stack-card")];
 
 function animateCards(){
 
-    cards.forEach((card,index)=>{
+const vh=window.innerHeight;
 
-        const rect = card.getBoundingClientRect();
+wrappers.forEach((wrap,index)=>{
 
-        const progress = Math.min(
-            Math.max((90-rect.top)/250,0),
-            1
-        );
+const card=cards[index];
 
-        card.style.transform =
-            `translateY(${progress*8}px) scale(${1-progress*0.05})`;
+const rect=wrap.getBoundingClientRect();
 
-        card.style.zIndex = index + 1;
+let progress=(vh-rect.top)/vh;
+progress=Math.max(0,Math.min(progress,1));
 
-        if(progress>0.8){
-            card.style.filter="brightness(1)";
-            card.style.boxShadow=
-            "0 40px 120px rgba(0,0,0,.6),0 0 40px rgba(24,185,232,.2)";
-        }else{
-            card.style.filter="brightness(.85)";
-            card.style.boxShadow=
-            "0 18px 40px rgba(0,0,0,.35)";
-        }
+let scale=1;
+let translate=0;
 
-    });
+/* Card stays fully visible for first 55% */
+
+if(progress>.55){
+
+const p=(progress-.55)/.45;
+
+scale=1-p*.06;
+translate=p*12;
 
 }
 
-window.addEventListener("scroll",animateCards);
-window.addEventListener("load",animateCards);
+card.style.transform=`translateY(${translate}px) scale(${scale})`;
+card.style.zIndex=100-index;
+
+if(progress>.6){
+
+card.style.filter="brightness(1)";
+card.style.boxShadow="0 45px 120px rgba(0,0,0,.6),0 0 45px rgba(24,185,232,.25)";
+
+}else{
+
+card.style.filter="brightness(.88)";
+card.style.boxShadow="0 20px 50px rgba(0,0,0,.35)";
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",animateCards,{passive:true});
 window.addEventListener("resize",animateCards);
+window.addEventListener("load",animateCards);
+
 </script>
-</body></html>
+
+</body>
+</html>
