@@ -7,7 +7,34 @@
 body{background:#0f082f;color:white}.glass{background:rgba(255,255,255,.06);backdrop-filter:blur(12px)}
 .flip{perspective:1000px}.flip-inner{transition:transform .7s;transform-style:preserve-3d}.flip:hover .flip-inner{transform:rotateY(180deg)}
 .face{backface-visibility:hidden}.back{transform:rotateY(180deg)}
-</style></head>
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+.stack-container{
+    max-width:1100px;
+    margin:auto;
+    position:relative;
+}
+
+.stack-card{
+    position:sticky;
+    top:90px;
+    min-height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transform-origin:center top;
+    transition:
+        transform .4s ease,
+        opacity .4s ease;
+}
+</style>
+
+
+</head>
 <body class="font-sans">
 <nav class="fixed top-0 w-full glass z-50"><div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
 <div class="flex items-center gap-3"><img src="assets/logo.jpg" class="w-12 h-12 rounded-full"><span class="font-bold">SIBA</span></div>
@@ -19,17 +46,39 @@ body{background:#0f082f;color:white}.glass{background:rgba(255,255,255,.06);back
 <p class="text-xl text-gray-300 mt-4">Empowering African students to build the next generation of Web3 innovation.</p>
 <div class="mt-8 flex gap-4"><a href="#join" class="bg-lime text-black px-6 py-3 rounded-full font-bold">Join SIBA</a><a href="#about" class="border border-cyan px-6 py-3 rounded-full">Learn More</a></div></div>
 <div class="relative"><div class="absolute inset-0 blur-3xl bg-cyan/30 rounded-full"></div><img src="assets/logo.jpg" class="relative rounded-3xl shadow-2xl"></div></div></section>
+<section class="stack-container py-20">
+    <!-- About -->
+    <div class="stack-card glass rounded-[32px] p-10 mb-16">
+        <h2 class="text-4xl font-bold text-cyan mb-6">Welcome to SIBA</h2>
+        <p class="text-gray-300 leading-8">
+            Students in Blockchain Africa (SIBA) is a pan-African community dedicated to...
+        </p>
+    </div>
 
-<section id="about" class="max-w-7xl mx-auto p-8 py-20">
-<h2 class="text-4xl font-bold text-cyan mb-6">Welcome to SIBA</h2>
-<p class="text-gray-300 leading-8">Students in Blockchain Africa (SIBA) is a pan-African community dedicated to fostering blockchain education, innovation, and adoption among students from secondary school to postgraduate level. We close the gap between Africa’s growing Web3 ecosystem and students seeking structured learning, mentorship, and opportunities.</p>
+    <!-- Vision -->
+    <div class="stack-card glass rounded-[32px] p-10 mb-16">
+        <h2 class="text-4xl font-bold text-lime mb-6">Vision</h2>
+        <p class="text-gray-300">
+            Every African student should have access to blockchain education...
+        </p>
+    </div>
 
-<div class="grid md:grid-cols-3 gap-6 mt-12">
-<div class="flip h-72"><div class="flip-inner h-full relative"><div class="face absolute inset-0 glass rounded-3xl p-6 flex flex-col justify-center"><h3 class="text-2xl text-lime font-bold">Vision</h3><p class="mt-3 text-gray-300">Access to blockchain education for every African student.</p></div><div class="face back absolute inset-0 bg-lime text-black rounded-3xl p-6 flex items-center justify-center font-semibold">Driving innovation, inclusion & economic growth.</div></div></div>
-<div class="flip h-72"><div class="flip-inner h-full relative"><div class="face absolute inset-0 glass rounded-3xl p-6 flex flex-col justify-center"><h3 class="text-2xl text-cyan font-bold">Mission</h3><p class="mt-3 text-gray-300">Build a supportive student community with mentorship and hands-on learning.</p></div><div class="face back absolute inset-0 bg-cyan text-black rounded-3xl p-6 flex items-center justify-center font-semibold">Pathways into the Web3 industry.</div></div></div>
-<div class="flip h-72"><div class="flip-inner h-full relative"><div class="face absolute inset-0 glass rounded-3xl p-6 flex flex-col justify-center"><h3 class="text-2xl text-white font-bold">Community</h3><p class="mt-3 text-gray-300">Workshops, hackathons, networking, and campus chapters.</p></div><div class="face back absolute inset-0 bg-white text-siba rounded-3xl p-6 flex items-center justify-center font-semibold">A place for beginners and builders alike.</div></div></div>
-</div></section>
+    <!-- Mission -->
+    <div class="stack-card glass rounded-[32px] p-10 mb-16">
+        <h2 class="text-4xl font-bold text-cyan mb-6">Mission</h2>
+        <p class="text-gray-300">
+            Build a supportive pan-African student community...
+        </p>
+    </div>
 
+    <!-- Community -->
+    <div class="stack-card glass rounded-[32px] p-10">
+        <h2 class="text-4xl font-bold text-white mb-6">Community</h2>
+        <p class="text-gray-300">
+            Workshops, hackathons, mentorship and networking...
+        </p>
+    </div>
+</section>
 <section id="team" class="bg-[#14063d] py-20"><div class="max-w-7xl mx-auto p-8">
 <h2 class="text-4xl font-bold text-lime mb-10">Meet the Team</h2>
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -73,4 +122,38 @@ body{background:#0f082f;color:white}.glass{background:rgba(255,255,255,.06);back
 </div></div></section>
 
 <footer class="text-center p-8 text-gray-400">© 2026 Students in Blockchain Africa (SIBA).</footer>
+
+
+
+
+<script>
+const cards = document.querySelectorAll(".stack-card");
+
+function animateCards(){
+
+    cards.forEach((card,index)=>{
+
+        const rect = card.getBoundingClientRect();
+        const trigger = window.innerHeight * 0.22;
+
+        let progress = (trigger - rect.top)/trigger;
+
+        progress = Math.max(0,Math.min(progress,1));
+
+        const scale = 1 - progress*0.08;
+        const opacity = 1 - progress*0.25;
+        const translate = progress*18;
+
+        card.style.transform =
+            `translateY(${translate}px) scale(${scale})`;
+
+        card.style.opacity = opacity;
+        card.style.zIndex = cards.length-index;
+    });
+
+}
+
+window.addEventListener("scroll",animateCards);
+window.addEventListener("load",animateCards);
+</script>
 </body></html>
