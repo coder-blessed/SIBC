@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIBA - Students in Blockchain Africa</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{siba:'#1C0A63',cyan:'#18B9E8',lime:'#C9FF1A'}}}}</script>
+<style>
+body{background:#0f082f;color:white}.glass{background:rgba(255,255,255,.06);backdrop-filter:blur(12px)}
+.flip{perspective:1000px}.flip-inner{transition:transform .7s;transform-style:preserve-3d}.flip:hover .flip-inner{transform:rotateY(180deg)}
+.face{backface-visibility:hidden}.back{transform:rotateY(180deg)}
+</style></head>
+<body class="font-sans">
+<nav class="fixed top-0 w-full glass z-50"><div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+<div class="flex items-center gap-3"><img src="assets/logo.jpg" class="w-12 h-12 rounded-full"><span class="font-bold">SIBA</span></div>
+<div class="hidden md:flex gap-6 text-sm"><a href="#about">About</a><a href="#team">Team</a><a href="#events">Events</a><a href="#join">Join</a></div></div></nav>
+
+<section class="min-h-screen flex items-center bg-gradient-to-br from-siba via-[#12053d] to-black pt-24">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 p-8 items-center">
+<div><h1 class="text-5xl md:text-7xl font-black">Students in <span class="text-cyan">Blockchain</span> Africa</h1>
+<p class="text-xl text-gray-300 mt-4">Empowering African students to build the next generation of Web3 innovation.</p>
+<div class="mt-8 flex gap-4"><a href="#join" class="bg-lime text-black px-6 py-3 rounded-full font-bold">Join SIBA</a><a href="#about" class="border border-cyan px-6 py-3 rounded-full">Learn More</a></div></div>
+<div class="relative"><div class="absolute inset-0 blur-3xl bg-cyan/30 rounded-full"></div><img src="assets/logo.jpg" class="relative rounded-3xl shadow-2xl"></div></div></section>
+
+<section id="about" class="max-w-7xl mx-auto p-8 py-20">
+<h2 class="text-4xl font-bold text-cyan mb-6">Welcome to SIBA</h2>
+<p class="text-gray-300 leading-8">Students in Blockchain Africa (SIBA) is a pan-African community dedicated to fostering blockchain education, innovation, and adoption among students from secondary school to postgraduate level. We close the gap between Africa’s growing Web3 ecosystem and students seeking structured learning, mentorship, and opportunities.</p>
+
+<div class="grid md:grid-cols-3 gap-6 mt-12">
+<div class="flip h-72"><div class="flip-inner h-full relative"><div class="face absolute inset-0 glass rounded-3xl p-6 flex flex-col justify-center"><h3 class="text-2xl text-lime font-bold">Vision</h3><p class="mt-3 text-gray-300">Access to blockchain education for every African student.</p></div><div class="face back absolute inset-0 bg-lime text-black rounded-3xl p-6 flex items-center justify-center font-semibold">Driving innovation, inclusion & economic growth.</div></div></div>
+<div class="flip h-72"><div class="flip-inner h-full relative"><div class="face absolute inset-0 glass rounded-3xl p-6 flex flex-col justify-center"><h3 class="text-2xl text-cyan font-bold">Mission</h3><p class="mt-3 text-gray-300">Build a supportive student community with mentorship and hands-on learning.</p></div><div class="face back absolute inset-0 bg-cyan text-black rounded-3xl p-6 flex items-center justify-center font-semibold">Pathways into the Web3 industry.</div></div></div>
+<div class="flip h-72"><div class="flip-inner h-full relative"><div class="face absolute inset-0 glass rounded-3xl p-6 flex flex-col justify-center"><h3 class="text-2xl text-white font-bold">Community</h3><p class="mt-3 text-gray-300">Workshops, hackathons, networking, and campus chapters.</p></div><div class="face back absolute inset-0 bg-white text-siba rounded-3xl p-6 flex items-center justify-center font-semibold">A place for beginners and builders alike.</div></div></div>
+</div></section>
+
+<section id="team" class="bg-[#14063d] py-20"><div class="max-w-7xl mx-auto p-8">
+<h2 class="text-4xl font-bold text-lime mb-10">Meet the Team</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-cyan rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Founder / Lead</h3><p>[Your Name]</p><p class="text-sm text-gray-400">[Country]</p></div>
+<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-lime rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Partnerships Lead</h3><p>TBD</p></div>
+<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-cyan rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Chapter Coordinator</h3><p>TBD</p></div>
+<div class="glass rounded-3xl p-6 text-center"><div class="w-24 h-24 bg-lime rounded-full mx-auto"></div><h3 class="mt-4 font-bold">Content Lead</h3><p>TBD</p></div>
+</div></div></section>
+
+<section id="events" class="max-w-7xl mx-auto p-8 py-20"><h2 class="text-4xl font-bold text-cyan mb-10">Meetings & Events</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-lime">Weekly Calls</h3><p class="text-gray-300 mt-3">Blockchain fundamentals, project updates, Q&A, chapter check-ins, and leadership syncs.</p></div>
+<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-cyan">Hackathons & Workshops</h3><p class="text-gray-300 mt-3">Smart contracts, Web3 101, speaker series, and inter-university meetups.</p></div>
+</div></section>
+
+<section class="bg-[#14063d] py-20"><div class="max-w-7xl mx-auto p-8">
+<h2 class="text-4xl font-bold text-lime mb-8">Partnerships</h2>
+<div class="grid md:grid-cols-3 gap-4">
+<div class="glass p-5 rounded-2xl">Africa's Blockchain Club</div>
+<div class="glass p-5 rounded-2xl">Sui Africa / SuiHub Lagos</div>
+<div class="glass p-5 rounded-2xl">Lisk Africa</div>
+<div class="glass p-5 rounded-2xl">Web3Unilag</div>
+<div class="glass p-5 rounded-2xl">Teen Girls in Blockchain</div>
+</div>
+<p class="mt-8 text-gray-300">SIBA offers partners access to a growing student network, co-hosted workshops, and distribution for grants, scholarships, and internships.</p></div></section>
+
+<section class="max-w-7xl mx-auto p-8 py-20"><h2 class="text-4xl font-bold text-cyan mb-10">Projects & Articles</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-lime">Projects</h3><p class="text-gray-300 mt-3">Future home for student-built hackathon projects solving African challenges.</p></div>
+<div class="glass rounded-3xl p-6"><h3 class="text-2xl font-bold text-cyan">Introduction to Web3</h3><p class="text-gray-300 mt-3">A beginner-friendly on-ramp covering wallets, smart contracts, and blockchain fundamentals.</p></div>
+</div></section>
+
+<section id="join" class="bg-gradient-to-r from-siba to-[#2b0d7a] py-20"><div class="max-w-5xl mx-auto p-8 text-center">
+<h2 class="text-5xl font-black">Join the Movement</h2>
+<p class="mt-6 text-xl text-gray-200">Become part of Africa’s next generation of blockchain builders.</p>
+<div class="grid md:grid-cols-2 gap-6 mt-10">
+<div class="glass rounded-2xl p-5"><p>🌐 Website</p><p class="text-gray-400">Coming Soon</p></div>
+<div class="glass rounded-2xl p-5"><p>✉ Email</p><p class="text-gray-400">info@siba.africa</p></div>
+<div class="glass rounded-2xl p-5"><p>𝕏 Twitter/X</p><p class="text-gray-400">Coming Soon</p></div>
+<div class="glass rounded-2xl p-5"><p>Telegram / WhatsApp</p><p class="text-gray-400">Coming Soon</p></div>
+</div></div></section>
+
+<footer class="text-center p-8 text-gray-400">© 2026 Students in Blockchain Africa (SIBA).</footer>
+</body></html>
