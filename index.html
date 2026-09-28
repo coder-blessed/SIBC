@@ -24,35 +24,32 @@ body{
         0 30px 80px rgba(0,0,0,.45),
         inset 0 1px rgba(255,255,255,.08);
 }
-
 .stack-container{
     max-width:1100px;
     margin:auto;
     position:relative;
-    padding-inline:1rem;
+    padding:120px 16px;
 }
 
+/* Each card sticks */
 .stack-card{
     position:sticky;
-    top:85px;
-    min-height:82vh;
-
+    top:90px;
+    height:80vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
-
     border-radius:32px;
     transform-origin:center top;
-
-    transition:
-        transform .45s cubic-bezier(.22,1,.36,1),
-        opacity .35s ease,
-        box-shadow .35s ease,
-        filter .35s ease;
-
-    will-change:transform;
+    transition:transform .45s cubic-bezier(.22,1,.36,1),
+               box-shadow .35s ease,
+               filter .35s ease;
 }
-</style>
+
+/* This makes every new card overlap the previous one */
+.stack-card:not(:first-child){
+    margin-top:-62vh;
+}</style>
 
 
 </head>
@@ -85,7 +82,7 @@ body{
     </div>
 
     <!-- Mission -->
-    <div class="stack-card glass rounded-[32px] p-10 mb-16">
+    <div class="stack-card glass rounded-[32px] p-10">
         <h2 class="text-4xl font-bold text-cyan mb-6">Mission</h2>
         <p class="text-gray-300">
             Build a supportive pan-African student community...
@@ -147,7 +144,6 @@ body{
 
 
 
-
 <script>
 const cards = [...document.querySelectorAll(".stack-card")];
 
@@ -158,36 +154,23 @@ function animateCards(){
         const rect = card.getBoundingClientRect();
 
         const progress = Math.min(
-            Math.max((120-rect.top)/120,0),
+            Math.max((90-rect.top)/250,0),
             1
         );
 
-        const scale = 1-progress*0.06;
-        const translate = progress*24;
-
         card.style.transform =
-            `translateY(${translate}px) scale(${scale})`;
+            `translateY(${progress*8}px) scale(${1-progress*0.05})`;
 
-        card.style.zIndex = 100-index;
+        card.style.zIndex = index + 1;
 
-        if(progress>0.98){
-
-            card.style.opacity="1";
-
+        if(progress>0.8){
             card.style.filter="brightness(1)";
-
             card.style.boxShadow=
-                "0 45px 120px rgba(0,0,0,.55),0 0 40px rgba(24,185,232,.18)";
-
+            "0 40px 120px rgba(0,0,0,.6),0 0 40px rgba(24,185,232,.2)";
         }else{
-
-            card.style.opacity="0.94";
-
-            card.style.filter="brightness(.86)";
-
+            card.style.filter="brightness(.85)";
             card.style.boxShadow=
-                "0 20px 50px rgba(0,0,0,.35)";
-
+            "0 18px 40px rgba(0,0,0,.35)";
         }
 
     });
@@ -195,8 +178,7 @@ function animateCards(){
 }
 
 window.addEventListener("scroll",animateCards);
-window.addEventListener("resize",animateCards);
 window.addEventListener("load",animateCards);
+window.addEventListener("resize",animateCards);
 </script>
-
 </body></html>
