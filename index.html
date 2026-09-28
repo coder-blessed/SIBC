@@ -14,8 +14,28 @@ html{scroll-behavior:smooth}body{margin:0;background:#09061f;color:#fff;font-fam
 #cursor{position:fixed;width:24px;height:24px;border-radius:50%;background:rgba(24,185,232,.35);pointer-events:none;filter:blur(8px);z-index:98}
 .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 60px rgba(0,0,0,.35)}
 .hero{min-height:100vh;display:grid;place-items:center;position:relative}
-.stack{max-width:1100px;margin:auto;padding:120px 20px}
-.wrap{height:115vh;position:relative}.card{position:sticky;top:90px;height:78vh;border-radius:30px;padding:48px}
+.stack{
+  max-width:1100px;
+  margin:auto;
+  padding:140px 20px 220px;
+  position:relative;
+}
+
+.wrap{
+  height:140vh;
+  position:relative;
+}
+
+.card{
+  position:sticky;
+  top:85px;
+  height:82vh;
+  border-radius:34px;
+  padding:48px;
+  transform-origin:center top;
+  transition:transform .15s linear;
+  will-change:transform;
+}
 .marquee{display:flex;gap:24px;white-space:nowrap;animation:m 18s linear infinite}
 @keyframes m{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .node{animation:pulse 2.4s infinite}@keyframes pulse{50%{transform:scale(1.25)}}
@@ -114,5 +134,44 @@ onmousemove=e=>cursor.style.transform=`translate(${e.clientX-12}px,${e.clientY-1
 addEventListener("scroll",()=>progress.style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+"%");
 document.querySelectorAll(".counter").forEach(el=>{ScrollTrigger.create({trigger:el,start:"top 80%",once:true,onEnter:()=>{let n=0,t=+el.dataset.v,s=setInterval(()=>{n+=Math.ceil(t/40);if(n>=t){n=t;clearInterval(s)}el.textContent=n.toLocaleString()},35)}})});
 document.querySelectorAll(".wrap").forEach((w,i)=>{gsap.to(w.querySelector(".card"),{scale:.94,y:12,scrollTrigger:{trigger:w,start:"top top+=90",end:"bottom top",scrub:true}})});
+
+
+
+const wrappers=[...document.querySelectorAll(".wrap")];
+const cards=[...document.querySelectorAll(".card")];
+
+function stackCards(){
+  const vh=window.innerHeight;
+
+  wrappers.forEach((wrap,index)=>{
+    const card=cards[index];
+    const rect=wrap.getBoundingClientRect();
+
+    let progress=(vh-rect.top)/vh;
+    progress=Math.max(0,Math.min(progress,1));
+
+    let scale=1;
+    let y=0;
+
+    if(progress>0.55){
+      const p=(progress-0.55)/0.45;
+      scale=1-p*0.08;
+      y=p*24;
+    }
+
+    card.style.transform=`translateY(${y}px) scale(${scale})`;
+    card.style.zIndex=100-index;
+
+    if(progress>0.65){
+      card.style.boxShadow="0 45px 120px rgba(0,0,0,.65),0 0 40px rgba(24,185,232,.25)";
+    }else{
+      card.style.boxShadow="0 20px 60px rgba(0,0,0,.35)";
+    }
+  });
+}
+
+window.addEventListener("scroll",stackCards,{passive:true});
+window.addEventListener("resize",stackCards);
+window.addEventListener("load",stackCards);
 </script>
 </body></html>
